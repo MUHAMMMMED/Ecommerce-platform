@@ -72,7 +72,7 @@ export default function Checkout() {
                         stripe={stripePromise}
                         options={{
                             fetchClientSecret,
-                            locale: 'ar',
+                            // locale: 'ar',
                         }}>
                         <EmbeddedCheckout />
                     </EmbeddedCheckoutProvider>
