@@ -1,0 +1,63 @@
+.Tracking {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
+  
+  .Tracking-icon-wrapper {
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: #9081f6;
+  }
+  
+  .Tracking-message {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .Tracking-order-number {
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .Tracking-p {
+    margin-top: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #9081f6;
+
+  }
+
+     
+  @media screen and (max-width: 785px) {
+    .Tracking {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding:5px;
+      margin-right: 5%;
+      width:90%;
+ 
+    }
+
+
+    .Tracking-icon-wrapper { margin-bottom: 10px;  font-size: 35px;   }
+    .Tracking-message {  font-size: 13px;  margin-bottom: 10px;    }
+    .Tracking-order-number {   font-size: 15px; }
+    .Tracking-p { margin-top: 5px;font-size:10px;   }
+     
+      
+   
+  
+ 
+}

@@ -1,0 +1,340 @@
+/* Main Dashboard Styles */
+.cat-dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: rtl;
+    text-align: right;
+}
+
+.cat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+.cat-header h2 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+/* Card Styles */
+.cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.8rem;
+    padding: 1rem 0;
+}
+
+.cat-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.cat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.cat-card-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.cat-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.cat-card:hover .cat-card-image img {
+    transform: scale(1.08);
+}
+
+.cat-card-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e9ecef;
+    color: #6c757d;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.cat-card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.cat-card-title {
+    margin: 0;
+    color: #1e2a44;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    line-height: 1.4;
+}
+
+.cat-card-description {
+    color: #495057;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0.8rem;
+    background-color: rgba(248, 249, 250, 0.7);
+    border-radius: 6px;
+
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.cat-card:hover .cat-card-description {
+    opacity: 1;
+}
+
+.cat-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-top: auto;
+}
+
+.cat-card-meta-icon {
+    color: #3498db;
+    font-size: 1.1rem;
+}
+
+.cat-card-actions {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #e9ecef;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.8rem;
+}
+
+.cat-btn-edit,
+.cat-btn-delete {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: 'Tajawal', sans-serif;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cat-btn-edit {
+    background-color: #51cf66;
+    color: white;
+}
+
+.cat-btn-edit:hover {
+    background-color: #40c057;
+    transform: scale(1.05);
+}
+
+.cat-btn-delete {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.cat-btn-delete:hover {
+    background-color: #f54b4b;
+    transform: scale(1.05);
+}
+
+/* Buttons (Non-Card) */
+.cat-btn-create {
+    background: linear-gradient(135deg, #3498db, #752ecc) !important;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.cat-btn-create:hover {
+    background: linear-gradient(135deg, #3498db, #752ecc);
+    transform: translateY(-1px);
+}
+
+/* Form Modal (Unchanged) */
+.cat-form-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.cat-form-container {
+    background: white;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cat-form-container h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.cat-form-group {
+    margin-bottom: 1.2rem;
+}
+
+.cat-form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #34495e;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.cat-form-group input,
+.cat-form-group textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.cat-form-group input:focus,
+.cat-form-group textarea:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.cat-form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.cat-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.cat-btn-cancel {
+    background-color: #95a5a6;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.cat-btn-cancel:hover {
+    background-color: #7f8c8d;
+}
+
+.cat-btn-submit {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.cat-btn-submit:hover {
+    background-color: #27ae60;
+}
+
+.cat-form-error {
+    color: #e74c3c;
+    background-color: #fadbd8;
+    padding: 0.8rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    font-family: 'Tajawal', sans-serif;
+}
+
+/* Loading and Error States */
+.cat-loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.cat-error-message {
+    color: #e74c3c;
+    background-color: #fadbd8;
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 500px;
+    font-family: 'Tajawal', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cat-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .cat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cat-form-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .cat-card {
+        max-width: 100%;
+    }
+}

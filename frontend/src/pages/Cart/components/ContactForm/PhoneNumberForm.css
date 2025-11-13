@@ -1,0 +1,46 @@
+ .phone-div {
+     float: right;
+     width: 100% !important;
+     /* margin: 20px auto; */
+     /* padding: 20px; */
+     background-color: #d33333;
+     border: 1px solid #ddd;
+     /* border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+
+ }
+
+ @media (max-width: 768px) {
+     .phone-div {
+         /* width: 98%;  
+      padding: 10px; */
+     }
+ }
+
+ .phone-form {
+     width: 100% !important;
+ }
+
+ .form-group {
+     margin-bottom: 15px;
+ }
+
+ .form-label {
+     display: block;
+     margin-bottom: 15px;
+     font-weight: bold;
+     color: #333;
+     font-size: 15px;
+ }
+
+ .phone-input-container {
+     float: right;
+     width: 100% !important;
+     margin-bottom: 15px;
+ }
+
+ .react-tel-input .form-control {
+     float: right;
+     width: 100% !important;
+     text-align: left;
+ }

@@ -1,0 +1,208 @@
+.fp-wrapper {
+    padding: 40px 20px;
+    direction: rtl;
+}
+
+.fp-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.fp-title {
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+}
+
+.fp-line {
+    flex: 1;
+    height: 2px;
+    background-color: #ddd;
+}
+
+.fp-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.fp-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.fp-card:hover {
+    transform: translateY(-5px);
+}
+
+.fp-image-wrapper {
+    position: relative;
+}
+
+.fp-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.fp-favorite {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #eee;
+    color: #fff;
+    border: 8px;
+    border-radius: 1px solid #ccc;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.fp-favorite:hover {
+    background-color: #333;
+    transform: translateY(-50%) scale(1.2);
+}
+
+.fp-favorite .active {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.fp-add-to-cart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fp-image-wrapper:hover .fp-add-to-cart {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.fp-add-to-cart:hover {
+    background-color: #333;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.fp-details {
+    padding: 15px;
+}
+
+.fp-name {
+    font-size: 16px;
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.fp-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fp-price {
+    color: #000;
+    font-weight: bold;
+}
+
+.fp-more {
+    background-color: #f4f4f4;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-weight: bold;
+    text-decoration-line: none;
+    color: #000;
+}
+
+.fp-more:hover {
+    background-color: #ddd;
+}
+
+/* Additional styles for loading, empty, success, and error states */
+.fp-loading {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    padding: 40px 20px;
+}
+
+.fp-empty {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.fp-empty .fp-title {
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.fp-empty p {
+    font-size: 16px;
+    color: #555;
+}
+
+.fp-success-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.fp-error-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #dc3545;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.fp-favorite {
+    background: transparent;
+    border: none;
+    color: gray;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.fp-favorite.active {
+    color: red;
+
+}

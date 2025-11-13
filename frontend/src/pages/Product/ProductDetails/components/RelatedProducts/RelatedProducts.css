@@ -1,0 +1,157 @@
+.related-wrapper {
+
+    padding: 10px 0px;
+    direction: rtl;
+    width: 100%;
+    float: right;
+
+
+}
+
+.related-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.related-title {
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+}
+
+.line {
+    flex: 1;
+    height: 2px;
+    background-color: #ddd;
+}
+
+.related-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .related-products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .related-header {
+
+        margin-bottom: 10px;
+
+    }
+
+    .rp-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .rp-more {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.rp-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.rp-card:hover {
+    transform: translateY(-4px);
+}
+
+.rp-image-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.rp-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.rp-details {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.rp-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+}
+
+.rp-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rp-price {
+    color: #000;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.rp-more {
+    background-color: #f4f4f4;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+}
+
+.rp-more:hover {
+    background-color: #ddd;
+}
+
+.rp-price-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+}
+
+.rp-old-price {
+    font-size: 13px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+
+
+.rp-old-price {
+    color: #999;
+    font-size: 14px;
+    text-decoration: line-through;
+    margin-left: 6px;
+}
+
+.rp-price {
+    color: #e60023;
+    font-weight: bold;
+    font-size: 16px;
+}

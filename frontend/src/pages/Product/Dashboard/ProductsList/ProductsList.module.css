@@ -1,0 +1,286 @@
+.productsDashboard {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Tajawal', 'Noto Sans Arabic', sans-serif;
+    direction: rtl;
+    text-align: right;
+    background-color: #f4f6f8;
+}
+
+.dashboardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+.dashboardHeader h2 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.btnCreate {
+    background: linear-gradient(135deg, #3498db, #752ecc);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btnCreate:hover {
+    background: #1e8449;
+    transform: translateY(-2px);
+}
+
+.searchFilterBar {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+.searchBox {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.searchBox input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: right;
+    background: #f8f9fa;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 1rem;
+    color: #7f8c8d;
+    font-size: 1.2rem;
+}
+
+.filterGroup {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #f8f9fa;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.filterGroup select,
+.filterGroup input {
+    padding: 0.6rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    min-width: 120px;
+}
+
+.filterIcon {
+    color: #7f8c8d;
+    font-size: 1.2rem;
+}
+
+.productsTableContainer {
+    overflow-x: auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.productsTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.productsTable th,
+.productsTable td {
+    padding: 1.2rem;
+    text-align: right;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.productsTable th {
+    background-color: #f8f9fa;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.productsTable tr:hover {
+    background-color: #f8f9fa;
+}
+
+.productThumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.productDescription {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    margin: 0.4rem 0 0;
+}
+
+.categoryTag {
+    display: inline-block;
+    background-color: #e8f4fc;
+    color: #3498db;
+    padding: 0.3rem 0.8rem;
+    border-radius: 14px;
+    font-size: 0.85rem;
+    margin-left: 0.4rem;
+    margin-bottom: 0.4rem;
+}
+
+.actionsCell {
+    min-width: 300px;
+}
+
+.btnEdit {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btnEdit:hover {
+    background-color: #e67e22;
+}
+
+.btnDelete {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btnDelete:hover {
+    background-color: #c0392b;
+}
+
+.btnSecondary {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btnSecondary:hover {
+    background-color: #2980b9;
+}
+
+.lowStock {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.loadingSpinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    font-size: 1.4rem;
+    color: #7f8c8d;
+}
+
+.errorMessage {
+    color: #e74c3c;
+    background-color: #fadbd8;
+    padding: 1.2rem;
+    border-radius: 8px;
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 600px;
+    font-size: 1rem;
+}
+
+@media (max-width: 1200px) {
+
+    .productsTable th:nth-child(5),
+    .productsTable td:nth-child(5) {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .dashboardHeader {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1.5rem;
+    }
+
+    .productsTable th:nth-child(4),
+    .productsTable td:nth-child(4),
+    .productsTable th:nth-child(6),
+    .productsTable td:nth-child(6) {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .productsDashboard {
+        padding: 1.5rem;
+    }
+
+    .searchFilterBar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .actionsCell {
+        min-width: auto;
+    }
+
+    .btnEdit,
+    .btnDelete,
+    .btnSecondary {
+        display: block;
+        width: 100%;
+        margin: 0.4rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .productsTable th:nth-child(3),
+    .productsTable td:nth-child(3),
+    .productsTable th:nth-child(7),
+    .productsTable td:nth-child(7) {
+        display: none;
+    }
+}

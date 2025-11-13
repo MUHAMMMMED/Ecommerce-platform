@@ -1,0 +1,207 @@
+.related-product-page {
+    max-width: 1100px;
+    margin: 12px auto;
+    padding: 0 12px;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: #333;
+    line-height: 1.4;
+    direction: rtl;
+    text-align: right;
+    background-color: #fff;
+    padding: 6px;
+    border-radius: 3px;
+}
+
+.related-products-container {
+    margin-top: 0px;
+    padding: 10px;
+    border-radius: 8px;
+    direction: rtl;
+    /* background-color: #e50a0a; */
+    /* width: 100%; */
+}
+
+.related-products-header {
+    text-align: right;
+    font-size: 1.25rem;
+    color: #0f1111;
+    font-weight: 700;
+    font-family: 'Segoe UI', sans-serif;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.related-products-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.related-product-item {
+    position: relative;
+    width: 160px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    display: flex;
+    /* border: 1px solid #e0e0e0; */
+    border-radius: 5px;
+}
+
+.related-product-image-wrapper {
+    position: relative;
+    width: 140px;
+    height: 140px;
+}
+
+.related-product-checkbox {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    transform: scale(1.2);
+    z-index: 2;
+    margin: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.related-product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.related-product-info {
+    text-align: center;
+    margin-top: 8px;
+}
+
+.related-product-title {
+    font-weight: 500;
+    color: #0f1111;
+    margin: 2px 0;
+    font-size: 14px;
+    line-height: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.related-product-price {
+    font-size: 13px;
+    color: #b12704;
+    margin: 2px 0;
+    font-weight: 500;
+}
+
+.related-product-out-of-stock {
+    font-size: 12px;
+    color: #cc0c39;
+    margin: 2px 0;
+}
+
+.related-product-actions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.related-products-total {
+    font-size: 14px;
+    color: #0f1111;
+    text-align: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.related-products-add-btn {
+    background-color: #333;
+    color: white;
+    border: 1px solid #333;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    width: 100%;
+    max-width: 300px;
+    transition: background 0.2s;
+}
+
+.related-products-add-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    border-color: #ccc;
+}
+
+.related-products-add-btn:hover:not(:disabled) {
+    background-color: #222;
+}
+
+.related-products-success-notification {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #e6f4ea;
+    border: 1px solid #34c759;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a3c34;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.related-products-success-icon {
+    font-size: 16px;
+    color: #34c759;
+}
+
+/* Responsive Design */
+@media (max-width: 450px) {
+    .related-products-list {
+        justify-content: space-between;
+    }
+
+    .related-product-item {
+        width: 45%;
+        /* 2 products side by side */
+        padding: 8px;
+    }
+
+    .related-product-image-wrapper {
+        width: 120px;
+        height: 120px;
+    }
+
+    .related-product-actions {
+        width: 100%;
+        padding: 8px;
+        margin-top: 15px;
+    }
+
+    .related-products-total {
+        text-align: center;
+    }
+
+    .related-products-add-btn,
+    .related-products-success-notification {
+        max-width: 100%;
+    }
+}

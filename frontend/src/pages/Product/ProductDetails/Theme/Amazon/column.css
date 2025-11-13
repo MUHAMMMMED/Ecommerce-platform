@@ -1,0 +1,52 @@
+/* Columns Layout */
+.amazon-columns {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.amazon-gallery-column {
+    flex: 1;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.amazon-details-column {
+    flex: 2;
+    min-width: 400px;
+    padding: 0 15px;
+}
+
+.amazon-price-column {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    align-self: flex-start;
+    position: sticky;
+    top: 20px;
+}
+
+@media (max-width: 992px) {
+    .amazon-columns {
+        flex-direction: column;
+    }
+
+    .amazon-price-column {
+        position: static;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .amazon-gallery-column,
+    .amazon-details-column {
+        min-width: 100%;
+    }
+}

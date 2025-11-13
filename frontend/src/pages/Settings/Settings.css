@@ -1,0 +1,151 @@
+/* دعم اللغة العربية */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;700&display=swap');
+
+.stg-dashboard {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Arabic', sans-serif;
+    direction: rtl;
+    text-align: right;
+}
+
+.stg-header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 10px;
+}
+
+.stg-header h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.stg-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stg-form-section {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.stg-form-section h3 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin: 0 0 15px;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 8px;
+}
+
+.stg-form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.stg-form-group label {
+    font-size: 14px;
+    color: #34495e;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.stg-form-group input,
+.stg-form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-align: right;
+    font-family: 'Noto Sans Arabic', sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+.stg-form-group input:focus,
+.stg-form-group textarea:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.stg-form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.stg-image-preview {
+    margin-top: 10px;
+}
+
+.stg-preview-image {
+    max-width: 200px;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.stg-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.stg-btn-save {
+    background-color: #2ecc71;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Noto Sans Arabic', sans-serif;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.stg-btn-save:hover {
+    background-color: #27ae60;
+    transform: scale(1.05);
+}
+
+.stg-btn-icon {
+    font-size: 1rem;
+}
+
+.stg-loading-spinner {
+    text-align: center;
+    font-size: 16px;
+    color: #34495e;
+    margin-top: 20px;
+}
+
+.stg-error-message {
+    text-align: center;
+    color: #e74c3c;
+    font-size: 16px;
+    margin-top: 20px;
+    background-color: #fadbd8;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stg-form-section {
+        padding: 15px;
+    }
+
+    .stg-preview-image {
+        max-width: 100%;
+    }
+}

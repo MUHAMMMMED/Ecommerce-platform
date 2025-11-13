@@ -1,0 +1,29 @@
+.amazon-categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+    align-items: center;
+}
+
+.amazon-category-label {
+    color: #666;
+    font-weight: 500;
+}
+
+.amazon-category-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 0px 0px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.amazon-category-link:hover {
+    background: #f0f0f0;
+}
+
+.amazon-category-separator {
+    color: #999;
+}

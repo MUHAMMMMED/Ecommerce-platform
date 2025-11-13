@@ -1,0 +1,51 @@
+.product-specs {
+    margin-top: 20px;
+}
+
+.specs-header {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #222;
+    font-weight: 500;
+}
+
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed #e0e0e0;
+    font-size: 15px;
+}
+
+.spec-row:last-child {
+    border-bottom: none;
+}
+
+.spec-title {
+    font-weight: 500;
+    color: #666;
+}
+
+.spec-value {
+    color: #333;
+    text-align: left;
+    direction: ltr;
+}
+
+.no-specs {
+    color: #999;
+    padding: 10px;
+    text-align: center;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .spec-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .spec-value {
+        text-align: right;
+    }
+}

@@ -1,0 +1,21 @@
+.mobile-center-footer {
+    background: #fff;
+    color: #000;
+    padding: 15px 10px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    font-family: "Arial", sans-serif;
+    font-size: 0.9rem;
+
+    /* يثبت الفوتر أسفل الصفحة */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.mobile-center-footer .copyright-text {
+    margin: 0;
+    font-weight: bold;
+    color: #000;
+}

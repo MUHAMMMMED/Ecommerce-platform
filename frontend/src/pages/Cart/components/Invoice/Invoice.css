@@ -1,0 +1,65 @@
+ .invoice-container {
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     direction: rtl;
+     margin-top: -15px;
+ }
+
+ .invoice-box {
+     width: 100%;
+     max-width: 400px;
+     background: #f7f7f8;
+     border: 1px solid #ddd;
+     border-radius: 10px;
+     padding: 20px 25px;
+     font-family: 'Tajawal', sans-serif;
+ }
+
+ .invoice-row {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-bottom: 14px;
+     font-size: 16px;
+ }
+
+ .invoice-label {
+     color: #444;
+     font-weight: 400;
+ }
+
+ .invoice-value {
+     color: #333;
+     font-weight: 400;
+ }
+
+ .currency {
+     font-size: 13px;
+     color: #888;
+     margin-right: 5px;
+ }
+
+ .invoice-row.total {
+     font-weight: bold;
+     font-size: 18px;
+ }
+
+ .bold {
+     font-weight: bold;
+     color: #000;
+ }
+
+ @media (max-width: 600px) {
+     .invoice-box {
+         padding: 15px;
+     }
+
+     .invoice-row {
+         font-size: 14px;
+     }
+
+     .invoice-row.total {
+         font-size: 16px;
+     }
+ }

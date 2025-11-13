@@ -1,0 +1,454 @@
+ .invoice-popup-modal {
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background: rgba(0, 0, 0, 0.8);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: 1100;
+     padding: 20px;
+     overflow: auto;
+     animation: invoiceFadeIn 0.3s ease-in-out;
+ }
+
+ .invoice-popup-modal-content {
+     position: relative;
+     background: #ffffff;
+     width: 100%;
+     max-width: 1000px;
+     border-radius: 12px;
+     max-height: 95vh;
+     overflow-y: auto;
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+     border: 2px solid #14b8a6;
+     animation: invoiceSlideUp 0.3s ease-in-out;
+ }
+
+ .invoice-popup-close-btn {
+     position: absolute;
+     top: 15px;
+     left: 15px;
+     background: #ef4444;
+     color: white;
+     border: none;
+     width: 40px;
+     height: 40px;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+     font-size: 1.2rem;
+     z-index: 10;
+     transition: all 0.3s ease;
+ }
+
+ .invoice-popup-close-btn:hover {
+     background: #dc2626;
+     transform: scale(1.1);
+ }
+
+ .invoice-popup-container {
+     width: 100%;
+     padding: 20px;
+ }
+
+ .invoice-popup-content {
+     background: white;
+     border-radius: 10px;
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+     overflow: hidden;
+ }
+
+ .invoice-popup-header {
+     display: flex;
+     flex-direction: column;
+     padding: 30px;
+     background: linear-gradient(135deg, #3498db, #5d0ac1);
+     color: white;
+ }
+
+ .invoice-popup-branding {
+     margin-bottom: 20px;
+ }
+
+ .invoice-popup-branding h1 {
+     font-size: 28px;
+     margin: 0 0 10px 0;
+     font-weight: 700;
+     text-align: right;
+ }
+
+ .invoice-popup-company-info {
+     text-align: right;
+ }
+
+ .invoice-popup-company-name {
+     font-size: 18px;
+     margin: 5px 0;
+     font-weight: 600;
+ }
+
+ .invoice-popup-company-contact {
+     font-size: 16px;
+     margin: 5px 0;
+     display: flex;
+     align-items: center;
+     justify-content: flex-end;
+     gap: 8px;
+ }
+
+ .invoice-popup-meta {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 20px;
+     margin-top: 15px;
+ }
+
+ .invoice-popup-number,
+ .invoice-popup-date,
+ .invoice-popup-status {
+     background: rgba(255, 255, 255, 0.1);
+     padding: 10px 15px;
+     border-radius: 6px;
+     font-size: 14px;
+     display: flex;
+     align-items: center;
+     gap: 8px;
+ }
+
+ .invoice-popup-status {
+     margin-right: auto;
+ }
+
+ .invoice-popup-status.paid {
+     background-color: rgba(46, 204, 113, 0.2);
+     color: #ffffff;
+ }
+
+ .invoice-popup-status.unpaid {
+     background-color: rgba(231, 76, 60, 0.2);
+     color: #e74c3c;
+ }
+
+ .invoice-popup-body {
+     padding: 30px;
+ }
+
+ .invoice-popup-section-title {
+     margin-bottom: 20px;
+     padding-bottom: 10px;
+     border-bottom: 2px solid #f1f1f1;
+ }
+
+ .invoice-popup-section-title h3 {
+     font-size: 18px;
+     color: #134e4a;
+     margin: 0;
+     display: flex;
+     align-items: center;
+     gap: 10px;
+ }
+
+ .invoice-popup-customer-details {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+     gap: 15px;
+     margin-bottom: 30px;
+ }
+
+ .invoice-popup-customer-details p {
+     margin: 0;
+     padding: 10px;
+     background: #f8f9fa;
+     border-radius: 6px;
+     font-size: 14px;
+ }
+
+ .invoice-popup-customer-details strong {
+     color: #134e4a;
+     margin-left: 5px;
+ }
+
+ .invoice-popup-products-table {
+     width: 100%;
+     border-collapse: collapse;
+     margin-bottom: 30px;
+ }
+
+ .invoice-popup-table-header {
+     display: flex;
+     background: #134e4a;
+     color: white;
+     font-weight: 600;
+     border-radius: 6px 6px 0 0;
+ }
+
+ .invoice-popup-header-cell {
+     flex: 1;
+     padding: 12px 10px;
+     text-align: center;
+     font-size: 14px;
+ }
+
+ .invoice-popup-table-body {
+     border: 1px solid #eee;
+     border-top: none;
+     border-radius: 0 0 6px 6px;
+     overflow: hidden;
+ }
+
+ .invoice-popup-table-row {
+     display: flex;
+     border-bottom: 1px solid #eee;
+ }
+
+ .invoice-popup-table-row:last-child {
+     border-bottom: none;
+ }
+
+ .invoice-popup-table-cell {
+     flex: 1;
+     padding: 12px 10px;
+     text-align: center;
+     font-size: 14px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .invoice-popup-product-name {
+     justify-content: flex-end !important;
+     text-align: right !important;
+ }
+
+ .invoice-popup-table-row:nth-child(even) {
+     background-color: #f9f9f9;
+ }
+
+ .invoice-popup-summary {
+     margin-top: 30px;
+     padding: 20px;
+     background: #f8f9fa;
+     border-radius: 6px;
+ }
+
+ .invoice-popup-summary-row {
+     display: flex;
+     justify-content: space-between;
+     padding: 10px 0;
+     font-size: 15px;
+ }
+
+ .invoice-popup-summary-row span:first-child {
+     font-weight: 600;
+ }
+
+ .invoice-popup-discount-row span:last-child {
+     color: #e74c3c;
+     font-weight: 600;
+ }
+
+ .invoice-popup-grand-total {
+     margin-top: 10px;
+     padding-top: 15px;
+     border-top: 2px solid #ddd;
+     font-size: 16px;
+     font-weight: 700;
+     color: #134e4a;
+ }
+
+ .invoice-popup-footer {
+     padding: 30px;
+     text-align: center;
+     background: #f8f9fa;
+     border-top: 1px solid #eee;
+ }
+
+ .invoice-popup-thank-you {
+     font-size: 16px;
+     color: #134e4a;
+     margin-bottom: 20px;
+     font-weight: 600;
+ }
+
+ .invoice-popup-actions {
+     display: flex;
+     gap: 15px;
+     justify-content: center;
+     flex-wrap: wrap;
+ }
+
+ .invoice-popup-download-btn {
+     background: linear-gradient(135deg, #3498db, #5d0ac1);
+     color: white;
+     border: none;
+     padding: 12px 25px;
+     border-radius: 6px;
+     font-size: 16px;
+     font-weight: 600;
+     cursor: pointer;
+     display: inline-flex;
+     align-items: center;
+     gap: 8px;
+     transition: all 0.3s ease;
+ }
+
+ .invoice-popup-download-btn:hover {
+     transform: translateY(-2px);
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+ }
+
+ .invoice-popup-close-btn-secondary {
+     background: #6b7280;
+     color: white;
+     border: none;
+     padding: 12px 25px;
+     border-radius: 6px;
+     font-size: 16px;
+     font-weight: 600;
+     cursor: pointer;
+     display: inline-flex;
+     align-items: center;
+     gap: 8px;
+     transition: all 0.3s ease;
+ }
+
+ .invoice-popup-close-btn-secondary:hover {
+     background: #4b5563;
+     transform: translateY(-2px);
+ }
+
+ /* Responsive Styles */
+ @media (max-width: 768px) {
+     .invoice-popup-header {
+         padding: 20px;
+     }
+
+     .invoice-popup-branding h1 {
+         font-size: 24px;
+     }
+
+     .invoice-popup-company-name {
+         font-size: 16px;
+     }
+
+     .invoice-popup-company-contact {
+         font-size: 14px;
+     }
+
+     .invoice-popup-meta {
+         flex-direction: column;
+         gap: 10px;
+     }
+
+     .invoice-popup-number,
+     .invoice-popup-date,
+     .invoice-popup-status {
+         width: 100%;
+         justify-content: flex-start;
+     }
+
+     .invoice-popup-body {
+         padding: 20px;
+     }
+
+     .invoice-popup-customer-details {
+         grid-template-columns: 1fr;
+     }
+
+     .invoice-popup-products-table {
+         display: block;
+         width: 100%;
+     }
+
+     .invoice-popup-table-header {
+         display: none;
+     }
+
+     .invoice-popup-table-body {
+         display: block;
+         width: 100%;
+     }
+
+     .invoice-popup-table-row {
+         display: block;
+         margin-bottom: 15px;
+         border: 1px solid #ddd;
+         border-radius: 6px;
+         overflow: hidden;
+     }
+
+     .invoice-popup-table-cell {
+         display: flex;
+         justify-content: space-between;
+         padding: 10px 15px;
+         text-align: right;
+         border-bottom: 1px solid #eee;
+     }
+
+     .invoice-popup-table-cell:last-child {
+         border-bottom: none;
+     }
+
+     .invoice-popup-table-cell::before {
+         content: attr(data-label);
+         font-weight: 600;
+         color: #134e4a;
+         margin-left: 10px;
+     }
+
+     .invoice-popup-summary-row {
+         font-size: 14px;
+     }
+
+     .invoice-popup-actions {
+         flex-direction: column;
+         gap: 10px;
+     }
+
+     .invoice-popup-download-btn,
+     .invoice-popup-close-btn-secondary {
+         width: 100%;
+     }
+ }
+
+ @media (max-width: 480px) {
+     .invoice-popup-container {
+         padding: 10px;
+     }
+
+     .invoice-popup-header {
+         padding: 15px;
+     }
+
+     .invoice-popup-table-cell {
+         font-size: 13px;
+         padding: 8px 12px;
+     }
+ }
+
+ @keyframes invoiceFadeIn {
+     from {
+         opacity: 0;
+     }
+
+     to {
+         opacity: 1;
+     }
+ }
+
+ @keyframes invoiceSlideUp {
+     from {
+         transform: translateY(30px);
+         opacity: 0;
+     }
+
+     to {
+         transform: translateY(0);
+         opacity: 1;
+     }
+ }

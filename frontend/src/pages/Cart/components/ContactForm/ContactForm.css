@@ -1,0 +1,406 @@
+/* General Container */
+.contact-form-unique-container {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 24px;
+    background: inherit;
+    border-radius: 12px;
+    direction: rtl;
+    background: #fafafa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid #ddd;
+}
+
+/* Form Styling */
+.contact-form-unique-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.contact-form-unique-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #2d2d2d;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+/* Form Row (Two Inputs Side by Side) */
+.contact-form-unique-row {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.contact-form-unique-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    padding: 0px;
+}
+
+/* Form Labels and Inputs */
+.contact-form-unique-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2d2d2d;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.contact-form-unique-required-star {
+    color: #ff4d4f;
+    margin-right: 4px;
+    font-size: 1.1rem;
+}
+
+.contact-form-unique-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: right;
+    background-color: #fff !important;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form-unique-input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 6px rgba(59, 130, 246, 0.2);
+    outline: none;
+    transform: translateY(-1px);
+    background-color: #fff !important;
+}
+
+.contact-form-unique-input:disabled {
+    background-color: #f3f4f6;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Phone Input Adjustments */
+.contact-form-unique-phone-container {
+    width: 100%;
+}
+
+.contact-form-unique-phone-input {
+    text-align: left !important;
+    width: 90% !important;
+    padding: 12px 16px !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 8px !important;
+    font-size: 1rem !important;
+    height: 48px !important;
+    background-color: #fff !important;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form-unique-phone-input:focus {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 6px rgba(59, 130, 246, 0.2) !important;
+    outline: none !important;
+    transform: translateY(-1px);
+}
+
+.contact-form-unique-phone-input:disabled {
+    background-color: #f3f4f6 !important;
+    cursor: not-allowed !important;
+    opacity: 0.7 !important;
+}
+
+/* Fix Flag and Number Spacing */
+.react-tel-input {
+    direction: ltr;
+    width: 100%;
+}
+
+.react-tel-input .flag-dropdown {
+    border-right: 1px solid #d1d5db;
+    padding: 0 5px !important;
+    text-align: left !important;
+    color: #000 !important;
+}
+
+.react-tel-input .selected-flag {
+    padding: 0 12px 0 8px !important;
+    width: 50px !important;
+    background-color: #f9fafb;
+    border-radius: 8px 0 0 8px;
+    display: flex;
+    align-items: center;
+}
+
+.react-tel-input .flag {
+    width: 20px !important;
+    height: 15px !important;
+    margin-right: 8px !important;
+}
+
+.react-tel-input .contact-form-unique-phone-input {
+    padding-left: 60px !important;
+}
+
+/* Improve Dropdown List Alignment */
+.react-tel-input .country-list {
+    width: 300px !important;
+    max-height: 200px !important;
+    overflow-y: auto;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.react-tel-input .country {
+    padding: 8px 12px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.react-tel-input .country .flag {
+    width: 20px !important;
+    height: 15px !important;
+    margin-right: 8px !important;
+}
+
+.react-tel-input .country .country-name {
+    margin-right: 8px !important;
+    font-size: 0.95rem !important;
+}
+
+.react-tel-input .country .dial-code {
+    font-size: 0.95rem !important;
+}
+
+/* Error Messages */
+.contact-form-unique-error {
+    color: #ff4d4f;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    text-align: right;
+    background-color: #fef2f2;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+/* Shipping Section */
+.contact-form-unique-shipping-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-form-unique-shipping-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2d2d2d;
+    text-align: right;
+}
+
+.contact-form-unique-shipping-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-form-unique-shipping-card {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-form-unique-shipping-card:hover {
+    border-color: #3b82f6;
+    background-color: #f9fafb;
+    transform: translateY(-2px);
+}
+
+.contact-form-unique-selected {
+    border-color: #3b82f6;
+    background-color: #eff6ff;
+}
+
+.contact-form-unique-shipping-card-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.contact-form-unique-shipping-icon {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+}
+
+.contact-form-unique-shipping-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.contact-form-unique-shipping-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2d2d2d;
+}
+
+.contact-form-unique-shipping-days {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.contact-form-unique-shipping-price {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #22c55e;
+}
+
+/* Submit Button */
+.contact-form-unique-submit-button {
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-form-unique-submit-button:hover {
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.contact-form-unique-submit-button:disabled {
+    background: #d1d5db;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Spinner */
+.contact-form-unique-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-left: 12px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Empty Cart Message */
+.contact-form-unique-empty-cart-message {
+    text-align: center;
+    color: #6b7280;
+    font-size: 1rem;
+    padding: 24px;
+    background-color: #fef2f2;
+    border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-form-unique-container {
+        padding: 16px;
+        margin: 12px;
+    }
+
+    .contact-form-unique-form {
+        gap: 20px;
+    }
+
+    .contact-form-unique-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .contact-form-unique-input,
+    .contact-form-unique-phone-input {
+        padding: 10px 14px;
+        font-size: 0.95rem;
+    }
+
+    .contact-form-unique-label {
+        font-size: 0.95rem;
+    }
+
+    .contact-form-unique-shipping-card {
+        padding: 12px;
+    }
+
+    .contact-form-unique-shipping-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contact-form-unique-shipping-name,
+    .contact-form-unique-shipping-price {
+        font-size: 0.95rem;
+    }
+
+    .contact-form-unique-shipping-days {
+        font-size: 0.85rem;
+    }
+
+    .contact-form-unique-submit-button {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form-unique-container {
+        padding: 12px;
+        margin: 8px;
+    }
+
+    .contact-form-unique-title {
+        font-size: 1.4rem;
+    }
+
+    .contact-form-unique-label {
+        font-size: 0.9rem;
+    }
+
+    .contact-form-unique-input,
+    .contact-form-unique-phone-input {
+        font-size: 0.9rem;
+    }
+
+    .contact-form-unique-error {
+        font-size: 0.8rem;
+    }
+
+    .contact-form-unique-shipping-title {
+        font-size: 1.15rem;
+    }
+
+    .contact-form-unique-submit-button {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+}

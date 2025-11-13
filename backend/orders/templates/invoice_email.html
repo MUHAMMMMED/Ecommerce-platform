@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فاتورة طلبك #{{ order.id|default:"غير متوفر" }}</title>
+</head>
+
+<body
+    style="font-family: Arial, sans-serif; direction: rtl; text-align: right; margin: 0; padding: 0; background: #f4f4f4;">
+    <table
+        style="width: 100%; max-width: 800px; margin: 20px auto; border-collapse: collapse; background: white; border: 1px solid #ddd;">
+        <tbody>
+            <tr>
+                <td style="background: #134e4a; color: white; padding: 20px; text-align: right;">
+                    <h1 style="font-size: 24px; margin: 0;">فاتورة ضريبية</h1>
+                    <p style="font-size: 16px; margin: 5px 0;">{{ order.store_name|default:"logo" }}</p>
+                    <p style="font-size: 14px; margin: 5px 0;">
+                        <span style="vertical-align: middle; margin-left: 5px;">📞</span> {{
+                        order.customer.phone|default:"غير متوفر" }}
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 15px;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr>
+                            <td style="padding: 10px; background: #f1f1f1;"># رقم الفاتورة: {{
+                                order.invoice_number|default:"غير متوفر" }}</td>
+                            <td style="padding: 10px; background: #f1f1f1;">📅 تاريخ الفاتورة: {{
+                                order.created_at|default:"غير متوفر" }}</td>
+                            <td
+                                style="padding: 10px; background: {% if order.is_paid %}#2ecc71{% else %}#e74c3c{% endif %}; color: white;">
+                                💳 حالة الدفع: {% if order.is_paid %}تم الدفع{% else %}لم يتم الدفع{% endif %}
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 20px;">
+                    <h3 style="font-size: 18px; color: #134e4a;">📍 معلومات العميل</h3>
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr>
+                            <td style="padding: 10px; background: #f8f9fa;"><strong>الاسم:</strong> {{
+                                order.customer.name|default:"غير معروف" }}</td>
+                            <td style="padding: 10px; background: #f8f9fa;"><strong>الهاتف:</strong> {{
+                                order.customer.phone|default:"غير متوفر" }}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; background: #f8f9fa;"><strong>الدولة:</strong> {{
+                                order.customer.country|default:"غير محدد" }}</td>
+                            <td style="padding: 10px; background: #f8f9fa;"><strong>المحافظة:</strong> {{
+                                order.customer.governorate|default:"غير محدد" }}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; background: #f8f9fa;"><strong>المدينة:</strong> {{
+                                order.customer.city|default:"غير محدد" }}</td>
+                            <td style="padding: 10px; background: #f8f9fa;"><strong>الحي:</strong> {{
+                                order.customer.neighborhood|default:"غير محدد" }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="padding: 10px; background: #f8f9fa;"><strong>عنوان الشحن:</strong> {{
+                                order.customer.shipping_address|default:"غير محدد" }}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 20px;">
+                    <h3 style="font-size: 18px; color: #134e4a;">🛒 تفاصيل المنتجات</h3>
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                        <thead>
+                            <tr style="background: #134e4a; color: white;">
+                                <th style="padding: 10px; text-align: center;">#</th>
+                                <th style="padding: 10px; text-align: right;">المنتج</th>
+                                {% if has_color %}
+                                <th style="padding: 10px; text-align: center;">اللون</th>
+                                {% endif %}
+                                <th style="padding: 10px; text-align: center;">الكمية</th>
+                                <th style="padding: 10px; text-align: center;">السعر</th>
+                                <th style="padding: 10px; text-align: center;">الإجمالي</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in items %}
+                            <tr
+                                style="background: {% if forloop.counter|divisibleby:2 %}#f9f9f9{% else %}white{% endif %};">
+                                <td style="padding: 10px; text-align: center;">{{ forloop.counter }}</td>
+                                <td style="padding: 10px; text-align: right;">{{ item.product_title|default:"غير معروف"
+                                    }}</td>
+                                {% if has_color %}
+                                <td style="padding: 10px; text-align: center;">{{ item.color|default:"غير محدد" }}</td>
+                                {% endif %}
+                                <td style="padding: 10px; text-align: center;">{{ item.quantity|default:"1" }}</td>
+                                <td style="padding: 10px; text-align: center;">{{ item.price }} {{
+                                    order.currency|default:"EGP" }}</td>
+                                <td style="padding: 10px; text-align: center;">{{ item.total }} {{
+                                    order.currency|default:"EGP" }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 20px; background: #f8f9fa;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr>
+                            <td style="padding: 10px;">المجموع الفرعي:</td>
+                            <td style="padding: 10px; text-align: left;">{{ subtotal }} {{ order.currency|default:"EGP"
+                                }}</td>
+                        </tr>
+                        {% if discount != "0.00" %}
+                        <tr>
+                            <td style="padding: 10px;">الخصم:</td>
+                            <td style="padding: 10px; text-align: left; color: #e74c3c;">-{{ discount }} {{
+                                order.currency|default:"EGP" }}</td>
+                        </tr>
+                        {% endif %}
+                        <tr>
+                            <td style="padding: 10px;">الشحن:</td>
+                            <td style="padding: 10px; text-align: left;">{{ shipping }} {{ order.currency|default:"EGP"
+                                }}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px;">الضريبة:</td>
+                            <td style="padding: 10px; text-align: left;">{{ tax }} {{ order.currency|default:"EGP" }}
+                            </td>
+                        </tr>
+                        <tr style="font-weight: bold; border-top: 2px solid #ddd;">
+                            <td style="padding: 10px;">الإجمالي النهائي:</td>
+                            <td style="padding: 10px; text-align: left; color: #134e4a;">{{ total }} {{
+                                order.currency|default:"EGP" }}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 20px; text-align: center; background: #f8f9fa;">
+                    <p style="font-size: 16px; color: #134e4a; margin: 0 0 10px;">شكراً لاختياركم متجرنا</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

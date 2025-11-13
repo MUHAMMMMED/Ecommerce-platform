@@ -1,0 +1,184 @@
+ 
+
+ 
+*,*:after,*:before{
+    box-sizing: border-box;
+    outline: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+     
+    .loader-gradient{
+    position: relative;
+    background: white;
+    overflow: hidden;
+    width:100%;
+    box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    /* border: 1px solid #686868; */
+    margin-top: 150px; 
+    height: 500px;
+    margin: auto;
+
+    @media (max-width: 768px) {
+ 
+        width:  97%;
+        margin: auto;
+       }
+    
+      @media (max-width: 480px) {
+  
+        width: 97%;
+        margin: auto;
+       }
+      
+    }
+  
+ 
+    .loader-gradient_row{
+      position: relative;
+      overflow: hidden;
+      width:100%; 
+      height: 350px;
+      margin-top: 30px;
+      margin-bottom: 50px;
+      @media (max-width: 768px) {
+ 
+        width:  97%;
+        margin: auto;
+       }
+    
+      @media (max-width: 480px) {
+  
+        width: 97%;
+        margin: auto;
+       }
+    }
+
+    .loader-gradient_card{
+       float: left;
+       position: relative;
+       background: white;
+       overflow: hidden;
+       width:30%; 
+       margin-left: 3%;
+       height: 350px;
+       box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+       border-radius: 10px;
+    }
+
+
+
+
+
+
+
+
+
+    .loader-gradient:before{
+    animation: scroll-gradient 1s steps(20, end) infinite forwards;
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(117deg, rgba(255,255,255,1) 15%, rgba(246,246,246,1) 46%, rgba(255,255,255,1) 85%);
+    background: -webkit-linear-gradient(117deg, rgba(255,255,255,1) 15%, rgba(246,246,246,1) 46%, rgba(255,255,255,1) 85%);
+    background: linear-gradient(117deg, rgba(255,255,255,1) 15%, rgba(246,246,246,1) 46%, rgba(255,255,255,1) 85%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+    content: ' ';
+    display: block;
+    height:100%;
+    position: absolute;
+    width:100%;
+  
+
+    will-change: transform;
+    }
+    @keyframes scroll-gradient{
+    0%{
+    transform:translateX(-100%)
+    }
+    100%{
+    transform:translateX(100%)
+    }
+    }
+
+    .loader-gradient_card:before{
+      animation: scroll-gradient 1s steps(20, end) infinite forwards;
+      background: rgb(255,255,255);
+      background: -moz-linear-gradient(117deg, rgba(255,255,255,1) 15%, rgba(246,246,246,1) 46%, rgba(255,255,255,1) 85%);
+      background: -webkit-linear-gradient(117deg, rgba(255,255,255,1) 15%, rgba(246,246,246,1) 46%, rgba(255,255,255,1) 85%);
+      background: linear-gradient(117deg, rgba(255,255,255,1) 15%, rgba(246,246,246,1) 46%, rgba(255,255,255,1) 85%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+      content: ' ';
+      display: block;
+      height:100%;
+      position: absolute;
+      width:100%;
+    
+  
+      will-change: transform;
+      }
+      @keyframes scroll-gradient{
+      0%{
+      transform:translateX(-100%)
+      }
+      100%{
+      transform:translateX(100%)
+      }
+      }
+  
+
+ .error{
+      margin-top:50px;
+    
+      width: 70%;
+      margin-left: 15%;
+      float: left;
+
+    }
+
+    .error_row{
+       width: 100%;
+      float: left;
+    }
+
+
+ .error_img{
+  width: 70%;
+  margin-left: 15%;
+  
+ }
+
+ .error_head{
+  margin-top: 20px;
+  width: 100%;
+ float: left;
+ text-align: center;
+}
+.error_p{
+  width: 100%;
+ float: left;
+ text-align: center;
+
+}
+
+.error_button-container {
+  display: flex;
+  justify-content: center; /* Center the button horizontally */
+  margin-top: 40px; /* Optional margin for spacing */
+  padding-bottom: 50px;
+}
+
+.error_but {
+  background-color: #9081f6; /* Button background color */
+  color: white; /* Text color */
+  border: none; /* Remove default button border */
+  padding: 10px 20px; /* Adjust padding for better spacing */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Change cursor on hover to indicate interactivity */
+  border-radius: 5px; /* Add border-radius for rounded corners */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for color change */
+}
+
+.error_but:hover {
+  background-color: #020100; /* Change background color on hover */
+}

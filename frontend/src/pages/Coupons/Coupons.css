@@ -1,0 +1,362 @@
+/* دعم اللغة العربية */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;700&display=swap');
+
+.cpn-dashboard {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Arabic', sans-serif;
+    direction: rtl;
+    text-align: right;
+}
+
+.cpn-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 10px;
+}
+
+.cpn-header h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.cpn-btn-add {
+    background: linear-gradient(135deg, #3498db, #752ecc) !important;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cpn-btn-add:hover {
+    background: linear-gradient(135deg, #2980b9, #1e6091);
+    transform: translateY(-2px);
+}
+
+/* Card Styles */
+.cpn-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.cpn-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.cpn-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.cpn-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: rgba(52, 152, 219, 0.05);
+}
+
+.cpn-card-title {
+    font-size: 1.4rem;
+    color: #1e2a44;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.cpn-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    color: white;
+    font-weight: 500;
+}
+
+.cpn-status.active {
+    background-color: #2ecc71;
+}
+
+.cpn-status.expired {
+    background-color: #e74c3c;
+}
+
+.cpn-status-icon {
+    font-size: 1.1rem;
+}
+
+.cpn-card-content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cpn-card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cpn-detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.cpn-detail-label {
+    font-weight: 600;
+    color: #34495e;
+}
+
+.cpn-detail-value {
+    color: #495057;
+}
+
+.cpn-badge {
+    padding: 2px 10px;
+    border-radius: 12px;
+    background-color: #dfe6e9;
+    color: #2c3e50;
+    font-size: 0.75rem;
+}
+
+.cpn-card-actions {
+    padding: 15px;
+    border-top: 1px solid #e9ecef;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.cpn-btn-edit,
+.cpn-btn-delete {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: 'Noto Sans Arabic', sans-serif;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cpn-btn-edit {
+    background-color: #51cf66;
+    color: white;
+}
+
+.cpn-btn-edit:hover {
+    background-color: #40c057;
+    transform: scale(1.05);
+}
+
+.cpn-btn-delete {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.cpn-btn-delete:hover {
+    background-color: #f54b4b;
+    transform: scale(1.05);
+}
+
+.cpn-btn-icon {
+    font-size: 1rem;
+}
+
+/* Modal Styles */
+.cpn-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.cpn-modal-content {
+    background: #fff;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    padding: 20px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cpn-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cpn-modal-header h3 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.cpn-btn-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #34495e;
+    transition: color 0.2s ease;
+}
+
+.cpn-btn-close:hover {
+    color: #e74c3c;
+}
+
+.cpn-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cpn-form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cpn-form-group label {
+    font-size: 14px;
+    color: #34495e;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.cpn-form-group input,
+.cpn-form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-align: right;
+    font-family: 'Noto Sans Arabic', sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+.cpn-form-group input:focus,
+.cpn-form-group textarea:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.cpn-form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.cpn-btn-save {
+    background-color: #2ecc71;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Noto Sans Arabic', sans-serif;
+    font-weight: 600;
+}
+
+.cpn-btn-save:hover {
+    background-color: #27ae60;
+}
+
+.cpn-btn-cancel {
+    background-color: #95a5a6;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Noto Sans Arabic', sans-serif;
+    font-weight: 600;
+}
+
+.cpn-btn-cancel:hover {
+    background-color: #7f8c8d;
+}
+
+/* Loading and Error States */
+.cpn-loading-spinner {
+    text-align: center;
+    font-size: 16px;
+    color: #34495e;
+    margin-top: 20px;
+}
+
+.cpn-error-message {
+    text-align: center;
+    color: #e74c3c;
+    font-size: 16px;
+    margin-top: 20px;
+    background-color: #fadbd8;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.cpn-no-coupons {
+    text-align: center;
+    color: #6c757d;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cpn-list {
+        grid-template-columns: 1fr;
+    }
+
+    .cpn-modal-content {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .cpn-detail-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .cpn-card {
+        max-width: 100%;
+    }
+}

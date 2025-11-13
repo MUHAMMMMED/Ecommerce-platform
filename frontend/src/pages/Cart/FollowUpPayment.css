@@ -1,0 +1,146 @@
+.payment-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 100%;
+
+    /* Limits container width on large screens */
+    margin: 0 auto;
+}
+
+.payment-button-wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+.payment-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* Full width */
+    padding: 16px 24px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 100%);
+    /* Professional blue gradient */
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    min-height: 60px;
+    margin-top: 10px;
+    ;
+    /* Taller button for prominence */
+}
+
+.payment-btn:hover:not(.loading):not(:disabled) {
+    background: linear-gradient(90deg, #1e40af 0%, #60a5fa 100%);
+    /* Lighter gradient on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.payment-btn:disabled {
+    background: #5c05e9;
+    /* Neutral grey for disabled state */
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.payment-btn.loading {
+    cursor: wait;
+    background: #5c05e9;
+    /* Darker grey for loading state */
+}
+
+.loading-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.spinner {
+    width: 28px;
+    height: 28px;
+    animation: spin 1s linear infinite;
+}
+
+.spinner-path {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 4;
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+}
+
+.loading-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 150;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -35;
+    }
+
+    100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -124;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .payment-btn {
+        font-size: 16px;
+        padding: 12px 20px;
+        min-height: 50px;
+    }
+
+    .loading-text {
+        font-size: 14px;
+    }
+
+    .spinner {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .payment-container {
+        padding: 10px;
+    }
+
+    .payment-btn {
+        font-size: 14px;
+        padding: 10px 16px;
+        min-height: 48px;
+    }
+
+    .loading-text {
+        font-size: 12px;
+    }
+
+    .spinner {
+        width: 20px;
+        height: 20px;
+    }
+}

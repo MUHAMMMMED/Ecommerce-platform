@@ -1,0 +1,48 @@
+ .SuccessMessage {
+
+     width: 100%;
+     max-width: 900px;
+     margin: 0 auto;
+     padding: 10px 20px 45px 10px;
+     margin-top: 2rem;
+     margin-bottom: .1rem;
+     background-color: #b4a9f53b;
+     color: #9081f6;
+     border: 1px solid #9081f6;
+     border-radius: 8px;
+     font-size: medium;
+ }
+
+ .SuccessMessage-text {
+     text-align: right;
+     padding: 5px;
+     margin: 0;
+     float: right;
+     width: 100%;
+ }
+
+ .SuccessMessage-icon {
+     float: right;
+     padding: 5px;
+     margin-left: 11px;
+     display: block;
+ }
+
+ @media screen and (max-width: 785px) {
+     .SuccessMessage {
+         width: 98%;
+         margin-right: 1%;
+         /* margin: 15px auto; */
+
+     }
+
+     .SuccessMessage-text {
+         text-align: center;
+         padding: 0;
+         margin: 0;
+         float: right;
+         width: 100%;
+     }
+
+
+ }

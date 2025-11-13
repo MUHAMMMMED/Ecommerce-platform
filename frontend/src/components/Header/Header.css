@@ -1,0 +1,131 @@
+.custom-header {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1002;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    direction: rtl;
+
+}
+
+.header-inner {
+    max-width: 1400px;
+    margin: auto;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.header-logo img {
+    margin-top: 5px;
+    height: 55px;
+    object-fit: contain;
+}
+
+/* Navigation */
+.header-nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav ul li a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 700;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.header-nav ul li a:hover {
+    color: #0077aa;
+}
+
+/* Icons */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon-btn {
+    background: none;
+    border: 2px solid #ccc;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.icon-btn:hover {
+    border-color: #0077aa;
+    color: #0077aa;
+}
+
+/* Badge */
+.cart-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 2px white;
+}
+
+/* Mobile Styles */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .header-nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        box-shadow: none;
+        transform: translateY(-150%);
+        transition: transform 0.3s ease-in-out;
+        padding: 20px;
+    }
+
+    .header-nav.active {
+        transform: translateY(0);
+    }
+
+    .header-nav ul {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .header-icons {
+        display: none;
+    }
+}

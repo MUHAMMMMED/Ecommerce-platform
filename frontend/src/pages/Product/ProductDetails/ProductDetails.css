@@ -1,0 +1,38 @@
+.details-Product {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 30px;
+}
+
+/* 
+.product-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+
+}
+
+.product-details {
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+
+
+}
+
+.product-details h2 {
+    font-size: 24px;
+    color: #000;
+    margin: 0;
+}
+
+.product-details p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.product-details span {
+    color: #ff0000;
+} */

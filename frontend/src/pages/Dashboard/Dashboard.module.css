@@ -1,0 +1,59 @@
+/* لوحة التحكم */
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+    margin-top: 0;
+    direction: rtl;
+}
+
+.contentWrapperDynamic {
+    flex: 1;
+    margin-right: 70px;
+    /* Adjusted for right sidebar */
+    margin-top: 0;
+    padding: 20px;
+    background: #f5f6fa;
+    transition: margin-right 0.3s ease;
+    /* Changed to margin-right */
+}
+
+.contentWrapperExpanded {
+    margin-right: 250px;
+    /* Adjusted for expanded sidebar on right */
+}
+
+.content {
+    padding: 20px;
+}
+
+/* استعلامات الوسائط */
+@media (min-width: 1024px) {
+    .contentWrapperDynamic {
+        margin-right: 70px;
+    }
+
+    .contentWrapperDynamic.contentWrapperExpanded {
+        margin-right: 250px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .contentWrapperDynamic {
+        margin-right: 70px;
+    }
+
+    .contentWrapperDynamic.contentWrapperExpanded {
+        margin-right: 250px;
+    }
+}
+
+@media (max-width: 767px) {
+    .contentWrapperDynamic {
+        margin-right: 0;
+    }
+
+    .sidebar.visible+.contentWrapperDynamic {
+        margin-right: 250px;
+        /* Adjusted for mobile sidebar on right */
+    }
+}

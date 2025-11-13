@@ -1,0 +1,539 @@
+/* FloatingCart.css */
+.fc-container {
+    direction: rtl;
+    font-family: 'Tajawal', 'Arial', sans-serif;
+}
+
+/* Floating Button */
+.fc-container .fc-cart-float-button {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    color: #6c757d;
+    border: none;
+    border-radius: 50%;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.fc-container .fc-cart-float-button:hover {
+    background-color: #f8f9fa;
+    transform: scale(1.1);
+}
+
+.fc-container .fc-cart-badge {
+    position: absolute;
+    top: -6px;
+    left: 6px;
+    background-color: #ff4d4f;
+    color: white;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Sidebar Wrapper */
+.fc-container .fc-cart-sidebar-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: none;
+}
+
+.fc-container .fc-cart-sidebar-wrapper.fc-open {
+    display: flex;
+}
+
+.fc-container .fc-cart-sidebar {
+    width: 450px;
+    background: #ffffff;
+    height: 100%;
+    padding: 20px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 2;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.fc-container .fc-cart-sidebar.fc-slide-in {
+    transform: translateX(0);
+}
+
+.fc-container .fc-cart-sidebar.fc-slide-out {
+    transform: translateX(100%);
+}
+
+/* Header */
+.fc-container .fc-cart-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+.fc-container .fc-cart-sidebar-header h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.fc-container .fc-close-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.fc-container .fc-close-btn:hover {
+    color: #ff4d4f;
+}
+
+/* Cart Items */
+.fc-container .fc-cart-items {
+    flex: 1;
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+    padding: 10px 0;
+}
+
+.fc-container .fc-empty-cart {
+    text-align: center;
+    color: #777;
+    font-size: 16px;
+    padding: 25px;
+    font-weight: 500;
+}
+
+.fc-container .fc-cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    background: #fafafa;
+    padding: 12px;
+    border-radius: 8px;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.fc-container .fc-cart-item:hover {
+    transform: translateY(-2px);
+    background: #f5f5f5;
+}
+
+.fc-container .fc-cart-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-left: 12px;
+}
+
+.fc-container .fc-remove-btn {
+    background: none;
+    border: 1px solid #6c757d;
+    color: #6c757d;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.fc-container .fc-remove-btn:hover {
+    color: #ffffff;
+    border-color: #ff4d4f;
+    background: #ff4d4f;
+}
+
+.fc-container .fc-item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.fc-container .fc-item-name {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.fc-container .fc-variant-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 4px;
+    font-size: 13px;
+    color: #555;
+}
+
+.fc-container .fc-color-detail {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.fc-container .fc-color-swatch {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    display: inline-block;
+}
+
+.fc-container .fc-notes {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #333;
+    background: #f1f3f5;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.fc-container .fc-notes span {
+    font-weight: 600;
+    color: #444;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.fc-container .fc-notes ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.fc-container .fc-note-item {
+    background: #ffffff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    border: 1px solid #e9ecef;
+    display: flex;
+    align-items: center;
+    transition: background 0.2s ease;
+}
+
+.fc-container .fc-note-item:hover {
+    background: #f8f9fa;
+}
+
+.fc-container .fc-note-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.fc-container .fc-note-text {
+    flex: 1;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.fc-container .fc-toggle-note-btn {
+    background: none;
+    border: none;
+    color: #007bff;
+    font-size: 12px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.fc-container .fc-toggle-note-btn:hover {
+    color: #0056b3;
+}
+
+.fc-container .fc-delete-note-btn {
+    background: none;
+    border: 1px solid #ff4d4f;
+    color: #ff4d4f;
+    font-size: 12px;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.fc-container .fc-delete-note-btn:hover {
+    background: #ff4d4f;
+    color: #ffffff;
+}
+
+.fc-container .fc-add-note {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.fc-container .fc-add-note input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.fc-container .fc-add-note input:focus {
+    border-color: #007bff;
+}
+
+.fc-container .fc-add-note button {
+    padding: 8px 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.fc-container .fc-add-note button:hover {
+    background: #0056b3;
+}
+
+.fc-container .fc-add-note button:disabled {
+    background: #d1d1d1;
+    cursor: not-allowed;
+}
+
+.fc-container .fc-item-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fc-container .fc-item-price {
+    font-size: 14px;
+    font-weight: 600;
+    color: #007bff;
+}
+
+.fc-container .fc-currency {
+    font-size: 14px;
+    color: #007bff;
+    margin-right: 4px;
+}
+
+.fc-container .fc-quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #e9ecef;
+    border-radius: 16px;
+    padding: 4px 8px;
+}
+
+.fc-container .fc-quantity-controls button {
+    background: none;
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #333;
+    transition: background 0.3s ease;
+}
+
+.fc-container .fc-quantity-controls button:hover {
+    background: #dee2e6;
+}
+
+.fc-container .fc-quantity-controls button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.fc-container .fc-quantity-controls span {
+    font-size: 14px;
+    color: #333;
+    min-width: 24px;
+    text-align: center;
+}
+
+.fc-container .fc-item-subtotal {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.fc-container .fc-subtotal-label {
+    font-size: 14px;
+    color: #444;
+    font-weight: 500;
+}
+
+.fc-container .fc-subtotal-value {
+    font-size: 14px;
+    color: #28a745;
+    font-weight: 600;
+}
+
+/* Footer */
+.fc-container .fc-cart-footer {
+    border-top: 2px solid #f0f0f0;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.fc-container .fc-total-price {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.fc-container .fc-checkout-button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 100%);
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.fc-container .fc-checkout-button:hover {
+    background: linear-gradient(135deg, #1cc13b, #28a745);
+    transform: translateY(-2px);
+}
+
+.fc-container .fc-checkout-button:disabled {
+    background: #d1d1d1;
+    cursor: not-allowed;
+}
+
+/* Overlay */
+.fc-container .fc-overlay {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.55);
+    cursor: pointer;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .fc-container .fc-cart-sidebar {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .fc-container .fc-cart-item img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .fc-container .fc-item-name {
+        font-size: 15px;
+    }
+
+    .fc-container .fc-item-details {
+        gap: 10px;
+    }
+
+    .fc-container .fc-item-price,
+    .fc-container .fc-currency,
+    .fc-container .fc-subtotal-label,
+    .fc-container .fc-subtotal-value {
+        font-size: 13px;
+    }
+
+    .fc-container .fc-quantity-controls {
+        padding: 3px 6px;
+    }
+
+    .fc-container .fc-quantity-controls button {
+        width: 22px;
+        height: 22px;
+    }
+
+    .fc-container .fc-quantity-controls span {
+        font-size: 13px;
+    }
+
+    .fc-container .fc-remove-btn {
+        width: 26px;
+        height: 26px;
+        font-size: 13px;
+    }
+
+    .fc-container .fc-add-note input {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .fc-container .fc-add-note button {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .fc-container .fc-notes {
+        padding: 8px;
+    }
+
+    .fc-container .fc-note-item {
+        padding: 6px 10px;
+    }
+
+    .fc-container .fc-note-text {
+        font-size: 12px;
+    }
+
+    .fc-container .fc-toggle-note-btn {
+        font-size: 11px;
+    }
+
+    .fc-container .fc-delete-note-btn {
+        width: 22px;
+        height: 22px;
+        font-size: 11px;
+    }
+}

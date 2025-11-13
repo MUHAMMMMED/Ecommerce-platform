@@ -1,0 +1,403 @@
+.landingModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(2px);
+}
+
+.landingContainer {
+    background: linear-gradient(145deg, #ffffff, #f0f4f8);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 950px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    position: relative;
+    direction: rtl;
+    font-family: 'Tajawal', 'Noto Sans Arabic', sans-serif;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e0e6ed;
+    padding-bottom: 0.5rem;
+}
+
+.modalHeader h3 {
+    margin: 0;
+    color: #1a3c5a;
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.btnClose {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #6b7280;
+    padding: 0.3rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.btnClose:hover {
+    color: #1a3c5a;
+    transform: scale(1.2);
+}
+
+.componentsList {
+    margin-bottom: 2rem;
+}
+
+.componentsGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.componentCard {
+    background: #ffffff;
+    border: 1px solid #d1dae3;
+    border-radius: 12px;
+    padding: 1.2rem;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.componentCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    border-color: #4f46e5;
+}
+
+.componentCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: #4f46e5;
+    transition: width 0.3s ease;
+}
+
+.componentCard:hover::before {
+    width: 8px;
+}
+
+.componentHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.componentHeader h4 {
+    margin: 0;
+    color: #1a3c5a;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.componentIndex {
+    color: #6b7280;
+    font-size: 0.85rem;
+    background: #e5e7eb;
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+}
+
+.componentPreview {
+    border: 1px dashed #b1bcca;
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+    min-height: 70px;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+.componentPreview:hover {
+    border-color: #4f46e5;
+}
+
+.componentActions {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: flex-start;
+}
+
+.btnMoveUp,
+.btnMoveDown {
+    background: linear-gradient(135deg, #60a5fa, #3b82f6);
+    color: white;
+    border: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.btnMoveUp:disabled,
+.btnMoveDown:disabled {
+    background: #d1d5db;
+    cursor: not-allowed;
+}
+
+.btnMoveUp:hover:not(:disabled),
+.btnMoveDown:hover:not(:disabled) {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    transform: translateY(-1px);
+}
+
+.btnEdit {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.btnEdit:hover {
+    background: linear-gradient(135deg, #d97706, #b45309);
+    transform: translateY(-1px);
+}
+
+.btnDelete {
+    background: linear-gradient(135deg, #f87171, #ef4444);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.btnDelete:hover {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    transform: translateY(-1px);
+}
+
+.noComponents {
+    color: #6b7280;
+    text-align: center;
+    padding: 1.2rem;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    border: 1px solid #e5e7eb;
+}
+
+.addComponentForm {
+    background-color: #f9fafb;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #d1dae3;
+}
+
+.addComponentForm h4 {
+    margin: 0 0 1rem;
+    color: #1a3c5a;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.formGroup {
+    margin-bottom: 1.2rem;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #1a3c5a;
+    font-size: 0.95rem;
+}
+
+.formGroup input,
+.formGroup textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #b1bcca;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    text-align: right;
+    background: #ffffff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    outline: none;
+}
+
+.formGroup textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.htmlPreview {
+    border: 1px solid #b1bcca;
+    padding: 0.8rem;
+    background: #f3f4f6;
+    border-radius: 8px;
+    min-height: 100px;
+    margin-top: 0.8rem;
+    transition: border-color 0.3s ease;
+}
+
+.htmlPreview:hover {
+    border-color: #4f46e5;
+}
+
+.formActions {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: flex-start;
+    margin-top: 1.2rem;
+}
+
+.btnAdd {
+    background: linear-gradient(135deg, #4f46e5, #4338ca);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.btnAdd:hover {
+    background: linear-gradient(135deg, #4338ca, #3730a3);
+    transform: translateY(-1px);
+}
+
+.btnCancel {
+    background: linear-gradient(135deg, #f87171, #ef4444);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.btnCancel:hover {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    transform: translateY(-1px);
+}
+
+.formError {
+    color: #dc2626;
+    background-color: #fef2f2;
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #fecaca;
+}
+
+.loadingSpinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    font-size: 1.3rem;
+    color: #6b7280;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .landingContainer {
+        margin: 1rem;
+        padding: 1.5rem;
+        max-width: 90%;
+    }
+
+    .modalHeader h3 {
+        font-size: 1.6rem;
+    }
+
+    .componentActions {
+        flex-wrap: wrap;
+    }
+
+    .btnMoveUp,
+    .btnMoveDown,
+    .btnEdit,
+    .btnDelete {
+        flex: 1;
+        margin-bottom: 0.4rem;
+        padding: 0.5rem;
+    }
+
+    .addComponentForm {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .modalHeader h3 {
+        font-size: 1.4rem;
+    }
+
+    .addComponentForm h4 {
+        font-size: 1.1rem;
+    }
+
+    .formGroup input,
+    .formGroup textarea {
+        font-size: 0.9rem;
+    }
+
+    .btnAdd,
+    .btnCancel {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
