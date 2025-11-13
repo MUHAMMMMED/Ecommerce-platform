@@ -1,19 +1,25 @@
 import React from 'react';
-import './ContinuousPaymentBar.css';
+import img1 from "./1.png";
+import img2 from "./2.png";
+import img21 from "./21.png";
+import img4 from "./4.png";
+import img5 from "./5.png";
+import img6 from "./6.png";
+import img8 from "./8.png";
+import './ContinuousPayment.css';
 
-const ContinuousPaymentBar = () => {
+const ContinuousPayment = () => {
     const paymentMethods = [
-        { id: 1, name: 'Visa', logo: '/images/visa-logo.png' },
-        { id: 2, name: 'MasterCard', logo: '/images/mastercard-logo.png' },
-        { id: 3, name: 'PayPal', logo: '/images/paypal-logo.png' },
-        { id: 4, name: 'Apple Pay', logo: '/images/apple-pay-logo.png' },
-        { id: 5, name: 'Google Pay', logo: '/images/google-pay-logo.png' },
-        { id: 6, name: 'Stripe', logo: '/images/stripe-logo.png' },
-        { id: 7, name: 'American Express', logo: '/images/amex-logo.png' },
-        { id: 8, name: 'Discover', logo: '/images/discover-logo.png' }
+        { id: 1, name: 'Visa', logo: img1 },
+        { id: 2, name: 'MasterCard', logo: img2 },
+        { id: 4, name: 'Apple Pay', logo: img4 },
+        { id: 5, name: 'Google Pay', logo: img5 },
+        { id: 6, name: 'Stripe', logo: img6 },
+        { id: 8, name: 'مصرف الراجحي', logo: img8 },
+        { id: 21, name: 'HSBC السعودية', logo: img21 },
     ];
 
-    // تكرار القائمة لإنشاء تأثير مستمر
+    // Duplicate the array to create seamless loop
     const duplicatedMethods = [...paymentMethods, ...paymentMethods];
 
     return (
@@ -30,8 +36,8 @@ const ContinuousPaymentBar = () => {
                                 src={method.logo}
                                 alt={method.name}
                                 className="payment-logo"
+                                loading="lazy"
                             />
-                            <span className="payment-name">{method.name}</span>
                         </div>
                     ))}
                 </div>
@@ -40,4 +46,4 @@ const ContinuousPaymentBar = () => {
     );
 };
 
-export default ContinuousPaymentBar;
+export default ContinuousPayment;

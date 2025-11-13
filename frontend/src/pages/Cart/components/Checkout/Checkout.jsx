@@ -4,6 +4,7 @@ import React, { useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import Config from '../../../../Authentication/config';
 import Header from '../../../../components/Header/Header';
+import ContinuousPayment from './components/PaymentHeader/ContinuousPayment';
 import PaymentHeader from './components/PaymentHeader/PaymentHeader';
 
 const stripePromise = loadStripe('pk_live_51PrGjb08z0yVWYfauWemGmGBL0Ut5qcTxOqH4hFUMQDMzxCC5wlUM2jN8b8oV5CAhgtv1ubJ6OGePBJ7DcCynkGU00PqB6MjWd"');
@@ -56,7 +57,8 @@ export default function Checkout() {
             <Header />
 
             <br />
-            <PaymentHeader />
+            <ContinuousPayment />
+
             <div
                 style={{
                     width: '500px',
@@ -78,9 +80,10 @@ export default function Checkout() {
                     </EmbeddedCheckoutProvider>
 
 
-
                 </div>
+
             </div>
+            <PaymentHeader />
         </>
     );
 }

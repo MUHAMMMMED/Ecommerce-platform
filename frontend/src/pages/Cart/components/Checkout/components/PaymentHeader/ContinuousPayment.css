@@ -1,0 +1,131 @@
+.continuous-payment-header {
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e9ecef;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-top: 60px;
+}
+
+.site-logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.site-logo-text {
+    font-size: 28px;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+.continuous-payment-bar {
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+    padding: 15px 0;
+    border-radius: 8px;
+    margin: 0 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.continuous-payment-slider {
+    display: flex;
+    animation: slide 30s linear infinite;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+    /* Space between images */
+}
+
+.payment-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 5px 10px;
+}
+
+.payment-logo {
+    max-width: 90px;
+    height: auto;
+    object-fit: contain;
+
+}
+
+.payment-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+
+
+/* Responsive design for tablets */
+@media (max-width: 768px) {
+    .continuous-payment-header {
+        padding: 10px 0;
+    }
+
+    .site-logo-text {
+        font-size: 26px;
+    }
+
+    .continuous-payment-bar {
+        margin: 0 10px;
+        padding: 12px 0;
+    }
+
+    .payment-logo {
+        max-width: 60px;
+    }
+
+    .continuous-payment-slider {
+        gap: 20px;
+        animation: slide 25s linear infinite;
+    }
+}
+
+/* Responsive design for mobile phones */
+@media (max-width: 480px) {
+    .continuous-payment-header {
+        padding: 8px 0;
+    }
+
+    .site-logo-text {
+        font-size: 22px;
+    }
+
+    .continuous-payment-bar {
+        margin: 0 8px;
+        padding: 10px 0;
+    }
+
+    .payment-logo {
+        max-width: 50px;
+    }
+
+    .continuous-payment-slider {
+        gap: 15px;
+        animation: slide 20s linear infinite;
+    }
+
+    .payment-item {
+        padding: 3px 8px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+    .payment-logo {
+        max-width: 40px;
+    }
+
+    .continuous-payment-slider {
+        gap: 12px;
+    }
+}

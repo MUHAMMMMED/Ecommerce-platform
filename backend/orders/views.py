@@ -61,7 +61,7 @@ def order_detail(id):
             return Response({"error": "Order not found"}, status=status.HTTP_404_NOT_FOUND)
 
         serializer = OrderSerializer(order)
-        # send_invoice_email( serializer.data)
+        send_invoice_email( serializer.data)
         return serializer.data
 
 

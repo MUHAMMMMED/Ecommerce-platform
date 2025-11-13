@@ -22,6 +22,7 @@ import img8 from "./8.png";
 import img9 from "./9.png";
 import './PaymentHeader.css';
 
+
 const PaymentHeader = () => {
     const [currentGroup, setCurrentGroup] = useState(0);
     const [isVisible, setIsVisible] = useState(true);
@@ -105,10 +106,7 @@ const PaymentHeader = () => {
 
     return (
         <div className="payment-header">
-            {/* شعار الموقع */}
-            <div className="site-logo-container">
-                <h1 className="site-logo-text">ALTAUREA</h1>
-            </div>
+
 
             {/* شريط وسائل الدفع */}
             <div className="payment-methods-bar">
@@ -148,6 +146,11 @@ const PaymentHeader = () => {
                         </div>
                     )}
                 </div>
+            </div>
+            {/* شعار الموقع */}
+            <div className="site-logo-container">
+                <br />
+                <h1 className="site-logo-text">ALTAUREA</h1>
             </div>
         </div>
     );
