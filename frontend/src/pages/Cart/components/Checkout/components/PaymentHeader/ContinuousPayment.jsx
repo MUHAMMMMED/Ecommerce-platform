@@ -19,7 +19,6 @@ const ContinuousPayment = () => {
         { id: 21, name: 'HSBC السعودية', logo: img21 },
     ];
 
-    // Duplicate the array to create seamless loop
     const duplicatedMethods = [...paymentMethods, ...paymentMethods];
 
     return (
@@ -42,6 +41,12 @@ const ContinuousPayment = () => {
                     ))}
                 </div>
             </div>
+
+            {/* النص الجديد */}
+            <div className="payment-info-message">
+                يمكنك الدفع عبر بطاقة الدفع أو Apple Pay بسهولة وأمان.
+            </div>
+
         </div>
     );
 };

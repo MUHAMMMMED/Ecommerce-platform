@@ -129,3 +129,50 @@
         gap: 12px;
     }
 }
+
+/* النص أسفل شريط الدفع */
+.payment-info-message {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0b85ff;
+    animation: fadeSlide 2s ease-out, pulse 3s infinite;
+}
+
+
+/* أنيميشن دخول */
+@keyframes fadeSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* أنيميشن نبض بسيط لفت الانتباه */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* موبايل */
+@media (max-width: 480px) {
+    .payment-info-message {
+        font-size: 13px;
+        margin-top: 12px;
+    }
+}

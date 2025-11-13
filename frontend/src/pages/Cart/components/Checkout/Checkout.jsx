@@ -43,7 +43,6 @@ export default function Checkout() {
     return (
         <>
             <Header />
-            <br />
             <ContinuousPayment />
 
             <div className="checkout-wrapper">
