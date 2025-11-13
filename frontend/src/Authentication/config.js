@@ -1,5 +1,5 @@
-const apiUrl = 'http://127.0.0.1:8000';
-// const apiUrl = 'https://www.altaurea.com';
+// const apiUrl = 'http://127.0.0.1:8000';
+const apiUrl = 'https://www.altaurea.com';
 // console.log("Current API URL:", apiUrl);
 
 
