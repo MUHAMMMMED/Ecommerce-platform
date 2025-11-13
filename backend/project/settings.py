@@ -16,13 +16,13 @@ SECRET_KEY = config(
  
 DEBUG = config('DEBUG', cast=bool, default=False)
  
-# ALLOWED_HOSTS = ["localhost", "127.0.0.1", "backend", "nginx"]
-ALLOWED_HOSTS = [
-    "altaurea.com",
-    "www.altaurea.com",
-    "46.101.182.75",
-    "localhost",
-]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "backend", "nginx"]
+# ALLOWED_HOSTS = [
+#     "altaurea.com",
+#     "www.altaurea.com",
+#     "46.101.182.75",
+#     "localhost",
+# ]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -101,29 +101,29 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_ALL_ORIGINS=True
 
 
-CORS_ALLOWED_ORIGINS = [
-    "https://altaurea.com",
-    "https://www.altaurea.com",
-    "http://46.101.182.75",
-    "https://46.101.182.75",
-]
-
-CSRF_TRUSTED_ORIGINS = [
-    "https://altaurea.com",
-    "https://www.altaurea.com",
-    "http://46.101.182.75",
-    "https://46.101.182.75",
-]
- 
-
- 
- 
 # CORS_ALLOWED_ORIGINS = [
-#     'http://localhost:3000',
+#     "https://altaurea.com",
+#     "https://www.altaurea.com",
+#     "http://46.101.182.75",
+#     "https://46.101.182.75",
 # ]
+
 # CSRF_TRUSTED_ORIGINS = [
-#     'http://localhost:3000',
+#     "https://altaurea.com",
+#     "https://www.altaurea.com",
+#     "http://46.101.182.75",
+#     "https://46.101.182.75",
 # ]
+ 
+
+ 
+ 
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+]
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:3000',
+]
 
 
 
@@ -140,24 +140,24 @@ SESSION_COOKIE_HTTPONLY = True  # Optional, for security
  
  
  
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
- 
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB'),
-        'USER': os.getenv('POSTGRES_USER'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'HOST': 'db',
-        'PORT': '5432',
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+ 
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.getenv('POSTGRES_DB'),
+#         'USER': os.getenv('POSTGRES_USER'),
+#         'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+#         'HOST': 'db',
+#         'PORT': '5432',
+#     }
+# }
 
  
 
