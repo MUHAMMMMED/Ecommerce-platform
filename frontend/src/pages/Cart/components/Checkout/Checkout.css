@@ -1,0 +1,39 @@
+/* حاوية checkout الرئيسية */
+.checkout-wrapper {
+    width: 100%;
+    max-width: 480px;
+    /* ممتاز للهاتف والكمبيوتر */
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* للهاتف */
+@media (max-width: 480px) {
+    .checkout-wrapper {
+        max-width: 100%;
+        padding: 0 10px;
+        /* هامش بسيط لتجنب الالتصاق بالحواف */
+    }
+}
+
+/* العنصر الداخلي */
+#checkout {
+    width: 100%;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* إزالة البادينغ الافتراضي لسترايب */
+.stripe-embedded-checkout {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+}
+
+/* في بعض الحالات يضيف stripe margin-top */
+.stripe-embedded-checkout-element,
+.stripe-embedded-checkout iframe {
+    margin: 0 !important;
+    padding: 0 !important;
+}
