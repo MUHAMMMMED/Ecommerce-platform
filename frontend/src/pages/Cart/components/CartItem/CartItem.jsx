@@ -3,7 +3,6 @@ import { FaMinus, FaPlus, FaTrash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import slugify from 'slugify';
 
-import Config from '../../../../Authentication/config';
 import { CartContext } from '../../../../Context/CartContext';
 import './CartItem.css';
 
@@ -91,7 +90,7 @@ const CartItem = ({ item, currency }) => {
 
     return (
         <div className="ci-cart-item">
-            {/* Image Section */}
+            {/* Image Section
             <div className="ci-image-section">
                 <div className="ci-item-image-container">
                     <img
@@ -100,7 +99,7 @@ const CartItem = ({ item, currency }) => {
                         className="ci-item-image"
                     />
                 </div>
-            </div>
+            </div> */}
 
             {/* Content Section */}
             <div className="ci-content-section">

@@ -134,18 +134,14 @@ SESSION_COOKIE_SECURE = True  # Requires HTTPS in production
 SESSION_COOKIE_SAMESITE = 'None'  # Allow cross-origin cookie sending
 SESSION_COOKIE_HTTPONLY = True  # Optional, for security
 
-# ================= LOG =================
-
+# ================= sql =================
  
- 
- 
- 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
  
 
 DATABASES = {
@@ -189,14 +185,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = '/app/media/'
 
 
-
-# STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
+ 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
  

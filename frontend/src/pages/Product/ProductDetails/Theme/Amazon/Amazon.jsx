@@ -9,6 +9,7 @@ import { CartContext } from '../../../../../Context/CartContext';
 import { useTrackEvents } from '../../../../../Pixels/hooks/useTrackEvents';
 import './AmazonStyle.css';
 import Categories from './Categories/Categories';
+import CountdownTimer from './CountdownTimer/CountdownTimer';
 import RelatedProducts from './RelatedProducts/RelatedProducts';
 
 const normalizeCurrency = (currency) => {
@@ -305,6 +306,14 @@ const Amazon = ({ product }) => {
 
     const isFavorite = favorites.includes(safeProduct.id);
 
+
+    // تحديد تاريخ انتهاء التخفيض (3 أيام من الآن)
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 2);
+
+
+
+
     return (
         <>
             <div className="product-page">
@@ -395,6 +404,10 @@ const Amazon = ({ product }) => {
                         <h3>تفاصيل المنتج</h3>
                         <p>{safeProduct.description || 'لا يوجد وصف متاح للمنتج'}</p>
                     </div>
+                    <CountdownTimer
+                        targetDate={targetDate}
+                        saleTitle="تخفيضات نهاية الموسم!"
+                    />
                     <Categories product={safeProduct} />
                     {safeProduct.isColor && uniqueColors.length > 0 && (
                         <div className="product-option-group">

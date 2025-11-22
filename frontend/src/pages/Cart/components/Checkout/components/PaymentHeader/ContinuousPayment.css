@@ -172,7 +172,7 @@
 /* موبايل */
 @media (max-width: 480px) {
     .payment-info-message {
-        font-size: 13px;
+        font-size: 14px;
         margin-top: 12px;
     }
 }
